@@ -1,4 +1,4 @@
-class BinaryTree:
+class Tree:
     def __init__(self, r=None, L=None, R=None):
         self.root = r
         self.left = L
@@ -12,14 +12,6 @@ class BinaryTree:
         if self.right is not None:
             self.right.depthfirst()
 
-    def contains(self, e):
-        if self.Empty():
-            return False
-        if self.root == e:
-            return True
-        if e > self.root:
-            return self.right.contains(e) and self.left.contains(e)
-   
         """
         ^^
         pb : contains a linear complexity
