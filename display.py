@@ -38,8 +38,14 @@ def add(self, e):
                 a[l] = a[r]
                 a[r] = temp
 
-    def populate(t,b):
+    def populate(t, b):
         if t.Empty():
-            populate(t.left,b)
+            populate(t.left, b)
         b.append(t.root)
-        populate(t.right,b)
+        populate(t.right, b)
+
+
+t = BST()
+for i in range(10):
+    print(i, ":")
+    t.lessThan(1).display()
