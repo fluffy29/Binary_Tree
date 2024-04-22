@@ -17,12 +17,22 @@ class BinaryTree:
             return False
         if self.root == e:
             return True
-        if self.left.contains(e) or self.right.contains(e):
-            return True
-    
+        if e > self.root:
+            return self.right.contains(e) and self.left.contains(e)
+   
         """
         ^^
         pb : contains a linear complexity
+        
+        def contains(self, e):
+        if self.Empty():
+            return False
+        if self.root == e:
+            return True
+        if e > self.root:
+            return self.right.contains(e)
+        return self.left.contains(e)
+
         """
 
     def height(self):
