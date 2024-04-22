@@ -19,6 +19,11 @@ class BinaryTree:
             return True
         if self.left.contains(e) or self.right.contains(e):
             return True
+    
+        """
+        ^^
+        pb : contains a linear complexity
+        """
 
     def height(self):
         if self.Empty():
@@ -28,4 +33,34 @@ class BinaryTree:
     def pathlength(self):
         if self.Empty():
             return 0
-        return 1 + self.left.pathlength() + self.right.pathlength()
+        return (
+            1
+            + self.left.pathlength()
+            + self.right.pathlength()
+            + self.left.size()
+            + self.right.size()
+        )
+
+    def size(self):
+        if self.Empty():
+            return 0
+        return 1 + self.left.size() + self.right.size()
+    
+    def Empty(self):
+        return self.root is None
+    
+    def __str__(self):
+        return f"({self.root}, {self.left}, {self.right})"
+    
+    def __repr__(self):
+        return f"BinaryTree({self.root}, {self.left}, {self.right})"
+    
+    def __eq__(self, other):
+        if self.Empty() and other.Empty():
+            return True
+        return (
+            self.root == other.root
+            and self.left == other.left
+            and self.right == other.right
+        )
+    
