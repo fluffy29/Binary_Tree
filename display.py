@@ -37,3 +37,9 @@ def add(self, e):
                     temp = a[1]
                 a[l] = a[r]
                 a[r] = temp
+
+    def populate(t,b):
+        if t.Empty():
+            populate(t.left,b)
+        b.append(t.root)
+        populate(t.right,b)
