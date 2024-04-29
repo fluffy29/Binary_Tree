@@ -49,3 +49,10 @@ t = BST()
 for i in range(10):
     print(i, ":")
     t.lessThan(1).display()
+
+def lessThan(self,e):
+    if self.isEmpty():
+        return BST()
+    if e == self.root:
+        return self.left
+    return BST(self.root,self.left.lessThan(e),self.right.lessThan(e))
